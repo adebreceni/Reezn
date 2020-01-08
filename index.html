@@ -1,3 +1,19 @@
 <html>
-<body><span>Hello, World!</span></body>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://play.reezn.io/fonts/Roboto/roboto.css">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body>
+    <div id="root">
+        <canvas id="backgroundCanvas" width=500 height=500></canvas>
+        <div class="title">Reezn</div>
+        <div class="subtitle">Both functional correctness and performance.</div>
+        <div class="subtitle">Can we do it?</div>
+        <div id="buttons">
+            <div id="docs" class="button" onclick="window.location='https://docs.reezn.io'"><span class="sizer">To the Playground!</span><span class="content">I can't even</span></div>
+            <div id="playground" class="button" onclick="window.location='https://play.reezn.io'">To the Playground!</div>
+        </div>
+    </div>
+</body>
+<script src="script/index.js"></script>
 </html>

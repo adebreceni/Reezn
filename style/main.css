@@ -1,0 +1,103 @@
+body, head, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#root{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.title{
+    letter-spacing: 0.05em;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 20px;
+}
+
+.subtitle{
+    font-size: 15px;
+    margin: 5px;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.button{
+    color: rgb(31, 31, 31);
+    padding: 10px 30px;
+    border-radius: 2px;
+    background-color: rgb(172, 172, 172);
+    white-space: pre;
+    text-align: center;
+    margin: 20px;
+    position: relative;
+}
+
+#docs{
+    background-color: rgba(36, 54, 216, 0.534);
+}
+
+#docs .sizer{
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#docs .content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#docs:hover{
+    background-color: rgb(36, 54, 216);
+}
+
+#playground{
+    background-color: rgba(52, 161, 37, 0.541);
+}
+
+#playground:hover{
+    background-color: rgb(46, 151, 32);
+}
+
+.button:hover{
+    color: rgb(216, 216, 216);
+    cursor: pointer;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.473));
+}
+
+#backgroundCanvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
