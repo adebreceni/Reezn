@@ -10,11 +10,15 @@ body, head, html{
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    align-items: center;
     justify-content: center;
+}
+
+#theme-toggle{
+    padding: 8px;
+}
+
+#theme-toggle path{
+    fill: #989898;
 }
 
 #header{
@@ -23,75 +27,59 @@ body, head, html{
     flex: none;
     height: 40px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    background-color: #282828;
 }
 
-.title{
-    letter-spacing: 0.05em;
-    font-size: 50px;
-    font-weight: 500;
-    margin: 20px;
-}
-
-.subtitle{
-    font-size: 15px;
-    margin: 5px;
-}
-
-#buttons{
+#hero{
+    background-color: #1c1e2e;
+    width: 100%;
+    height: 360px;
     display: flex;
     flex-direction: row;
-    margin: 50px;
-}
-
-.button{
-    color: rgb(31, 31, 31);
-    padding: 10px 30px;
-    border-radius: 2px;
-    background-color: rgb(172, 172, 172);
-    white-space: pre;
-    text-align: center;
-    margin: 20px;
     position: relative;
+    z-index: 0;
 }
 
-#docs{
-    background-color: rgba(36, 54, 216, 0.534);
+.flex-fill{
+    flex: 1;
 }
 
-#docs .sizer{
-    visibility: hidden;
-    pointer-events: none;
+#title{
+    letter-spacing: 0.05em;
+    font-size: 64px;
+    font-weight: 500;
+    margin-top: 40px;
+    color: #fcfcfc;
 }
 
-#docs .content{
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+#abstract{
+    font-size: 24px;
+    color: #cacaca;
+    margin-top: 20px;
 }
 
-#docs:hover{
-    background-color: rgb(36, 54, 216);
+span.line{
+    display: inline-block;
 }
 
 #playground{
-    background-color: rgba(52, 161, 37, 0.541);
+    background-color: #269331;
+    color: #eeeeee;
+    width: 250px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 60px;
+    font-size: 18px;
 }
 
 #playground:hover{
-    background-color: rgb(46, 151, 32);
+    background-color: #2aa336;
+    cursor: pointer;
 }
 
-.button:hover{
-    color: rgb(216, 216, 216);
-    cursor: pointer;
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.473));
-}
 
 #backgroundCanvas{
     position: absolute;
@@ -100,4 +88,97 @@ body, head, html{
     width: 100%;
     height: 100%;
     z-index: -1;
+    pointer-events: none;
+}
+
+#content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    color: #202020;
+    font-weight: 500;
+    padding-bottom: 40px;
+}
+
+.feature .code{
+    width: 400px;
+    flex: none;
+    margin: 20px;
+}
+
+.feature .text{
+    width: 300px;
+    flex: none;
+    margin: 20px;
+}
+
+.feature .what{
+    font-size: 24px;
+}
+
+.feature .why{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.feature{
+    margin-top: 100px;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+}
+
+@media(min-width: 800px){
+    .feature{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    #pre{
+        max-width: 200px;
+        flex: 1;
+    }
+    #abstract{
+        width: 400px;
+    }
+    .feature:nth-child(even) > *:nth-child(1){order: 1;}
+    .feature:nth-child(even) > *:nth-child(2){order: 4;}
+    .feature:nth-child(even) > *:nth-child(3){order: 3;}
+    .feature:nth-child(even) > *:nth-child(4){order: 2;}
+    .feature:nth-child(even) > *:nth-child(5){order: 5;}
+}
+
+@media(max-width: 800px){
+    .feature{
+        flex-direction: column;
+        align-items: center;
+    }
+    .code{
+        margin-top: 50px !important;
+    }
+    #hero-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #pre, #post{
+        flex: 1;
+    }
+    #abstract{
+        display: inline-grid;
+    }
+}
+
+.feature .mid{
+    flex: 1;
+    max-width: 200px;
+}
+
+#footer{
+    width: 100%;
+    height: 40px;
+    background-color: #282828;
 }

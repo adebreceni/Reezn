@@ -6,14 +6,67 @@
 </head>
 <body>
     <div id="root">
-        <canvas id="backgroundCanvas" width=500 height=500></canvas>
-        <div class="title">Reezn</div>
-        <div class="subtitle">Both functional correctness and performance.</div>
-        <div class="subtitle">Can we do it?</div>
-        <div id="buttons">
-            <div id="docs" class="button" onclick="window.location='https://docs.reezn.io'"><span class="sizer">To the Playground!</span><span class="content">I can't even</span></div>
-            <div id="playground" class="button" onclick="window.location='https://play.reezn.io'">To the Playground!</div>
+        <div id="header">
+            <div class="flex-fill"></div>
+            <div id="theme-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69zM12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6c3.31 0 6 2.69 6 6s-2.69 6-6 6z"/>
+                </svg>
+            </div>
         </div>
+        <div id="hero">
+            <canvas id="backgroundCanvas" width=500 height=500></canvas>
+            <div id="pre"></div>
+            <div id="hero-content">
+                <div id="title">Reezn</div>
+                <div id="abstract"><span class="line">A statically typed metalanguage</span><span class="line">to generate safe bare-metal code</span></div>
+                <div id="playground" class="button" onclick="window.location='https://play.reezn.io'">To the playground</div>
+            </div>
+            <div id="post"></div>
+        </div>
+        <div id="content">
+            <div class="feature">
+                <div class="flex-fill"></div>
+                <div class="text">
+                    <div class="what">Symbolic types</div>
+                    <div class="why">The inhabitants of such a type are only used for their type. This might seem pointless but this allows us to symbolically execute a function proving its termination.</div>
+                </div>
+                <div class="mid"></div>
+                <image class="code" src="images/symbolic.png">
+                <div class="flex-fill"></div>
+            </div>
+            <div class="feature">
+                <div class="flex-fill"></div>
+                <div class="text">
+                    <div class="what">Expression types</div>
+                    <div class="why">Think of TypeScript’s literal types, then think of Scala’s path-dependent types, if you go a little beyond them, you have expression types. They are singleton types with its only possible inhabitant being the result of the expression specified.</div>
+                </div>
+                <div class="mid"></div>
+                <image class="code" src="images/expression.png">
+                <div class="flex-fill"></div>
+            </div>
+            <div class="feature">
+                <div class="flex-fill"></div>
+                <div class="text">
+                    <div class="what">Union and intersection types</div>
+                    <div class="why">With union and intersection types the possible combinations are endless.</div>
+                </div>
+                <div class="mid"></div>
+                <image class="code" src="images/intersection.png">
+                <div class="flex-fill"></div>
+            </div>
+            <div class="feature">
+                <div class="flex-fill"></div>
+                <div class="text">
+                    <div class="what">Implicit values</div>
+                    <div class="why">As you are propagating important objects, e.g. one representing the application state, or a context object, you never have to explicitly provide them. If need be just pull them out of the hat with the the-expression.</div>
+                </div>
+                <div class="mid"></div>
+                <image class="code" src="images/implicit.png">
+                <div class="flex-fill"></div>
+            </div>
+        </div>
+        <div id="footer"></div>
     </div>
 </body>
 <script src="script/index.js"></script>

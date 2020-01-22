@@ -1,7 +1,7 @@
 const canvas = document.getElementById("backgroundCanvas");
 const ctx = canvas.getContext("2d");
 
-const density = 20/500000;
+const density = 40/500000;
 
 const pointRadius = 2;
 const distance = 200;
@@ -11,10 +11,9 @@ const minSpeed = 20
 
 const points = [];
 
-function ResizeCanvas(){
-    const root = document.getElementById("root");
-    canvas.width = root.offsetWidth;
-    canvas.height = root.offsetHeight;
+function ResizeCanvas(){;
+    canvas.width = canvas.parentElement.offsetWidth;
+    canvas.height = canvas.parentElement.offsetHeight;
     let expCount = canvas.width * canvas.height * density;
     if(points.length < expCount){
         points.push(...Array(Math.floor(expCount - points.length)).fill(null).map(_=>RandPoint()));
@@ -64,7 +63,7 @@ function Advance(p){
 function DrawPoint(pt){
     ctx.beginPath();
     ctx.arc(pt.x, pt.y, pointRadius, 0, 2*Math.PI);
-    ctx.fillStyle = `rgba(0, 0, 0, ${pt.w * 0.05})`;
+    ctx.fillStyle = `rgba(255, 255, 255, ${pt.w * 0.05})`;
     ctx.fill();
 }
 
@@ -72,7 +71,7 @@ function DrawLine(p, q, w){
     ctx.beginPath();
     ctx.moveTo(p.x, p.y);
     ctx.lineTo(q.x, q.y);
-    ctx.strokeStyle = `rgba(0, 0, 0, ${p.w * q.w * w* 0.2})`;
+    ctx.strokeStyle = `rgba(255, 255, 255, ${p.w * q.w * w* 0.2})`;
     ctx.stroke();
 }
 
@@ -94,4 +93,4 @@ function Draw(){
     requestAnimationFrame(Draw);
 }
 
-//requestAnimationFrame(Draw);
+requestAnimationFrame(Draw);
